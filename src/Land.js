@@ -10,8 +10,11 @@ import Services from 'components/Services';
 import Skills from 'components/Skills';
 import Testimonials from 'components/Testimonials';
 import Video from 'components/Video';
+import Navbar from 'components/Navbar';
 import { motion } from 'framer-motion';
 import React from 'react';
+import { Route, Link, Routes, BrowserRouter } from 'react-router-dom';
+import App from 'App';
 
 function Land() {
   return (

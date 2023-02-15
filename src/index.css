@@ -40,3 +40,48 @@ button {
     display: none;
   }
 }
+
+button {
+  background-color: #8f066a; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.b2 {
+  margin-right: 87px;
+}
+
+.inp1 {
+  background-color: #8f066a; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+}
+
+.inp2 {
+  background-color: #e015aad0;
+  border: none;
+  color: white;
+  padding: 15px 142px 20px 30px;
+  margin: 2px 2px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(255, 255, 255);
+  opacity: 1; /* Firefox */
+}

@@ -1,16 +1,16 @@
 import axios from 'axios';
-import React,{Component} from 'react';
-//import { saveAs } from 'file-saver';
+import React,{Component, useState} from 'react';
+import Button from 'react-bootstrap/Button';
 
 
 class App extends Component {
-
 
 	state = {
 
 	// Initially, no file is selected
 	selectedFile: null,
-	thetext: null
+	thetext: null,
+	murl: null,
 	};
 
 
@@ -43,6 +43,7 @@ class App extends Component {
 	
 	// Update the state
 	this.setState({ selectedFile: event.target.files[0] })
+	this.setState({murl: URL.createObjectURL(event.target.files[0])})
 	
 	};
 
@@ -109,6 +110,10 @@ class App extends Component {
 			{this.state.selectedFile.lastModifiedDate.toDateString()}
 			</p>
 
+			<p>
+				<img src={this.state.murl}></img>
+			</p>
+
 		</div>
 		);
 	} else {
@@ -132,9 +137,11 @@ class App extends Component {
 			Upload your image and text which you want to hide.
 			</h3>
 			<div>
-				<input type="file" onChange={this.onFileChange} />
-				<input type="text" onChange={this.onTextChange} />
-				<button onClick={this.onFileUpload}>
+				<input class='inp1' type="file" onChange={this.onFileChange} />
+				<br></br>
+				<input class='inp2' type="text" onChange={this.onTextChange} placeholder='Enter secret message'/>
+				<br />
+				<button class='b2' onClick={this.onFileUpload}>
 				Upload!
 				</button>
 
