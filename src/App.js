@@ -47,6 +47,15 @@ class App extends Component {
 	
 	};
 
+	onHide = event => {
+		const formData = new FormData();
+	
+	// Update the formData object
+	formData.append("plaintext", this.state.thetext);
+	axios.post("http://127.0.0.1:5000/hide", formData);
+
+	};
+
 	onTextChange = event => {
 	
 		// Update the state
@@ -64,7 +73,7 @@ class App extends Component {
 	
 	// Update the formData object
   formData.append("file", this.state.selectedFile);
-  formData.append("plaintext", this.state.thetext);
+//   formData.append("plaintext", this.state.thetext);
 	// formData.append(
 	// 	"myFile",
 	// 	this.state.selectedFile,
@@ -76,7 +85,7 @@ class App extends Component {
 	
 	// Request made to the backend api
 	// Send formData object
-	axios.post("http://127.0.0.1:5000/success", formData).then(
+	axios.post("http://127.0.0.1:5000/upload", formData).then(
 		(response)=> {
 			console.log(response)
 			// console.log(response);
@@ -144,7 +153,9 @@ class App extends Component {
 				<button class='b2' onClick={this.onFileUpload}>
 				Upload!
 				</button>
-
+				<button class='b2' onClick={this.onHide}>
+				Hide
+				</button>
 				<button onClick={this.downloadFile}>
 				Download!
 				</button>
