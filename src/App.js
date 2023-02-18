@@ -52,8 +52,21 @@ class App extends Component {
 	
 	// Update the formData object
 	formData.append("plaintext", this.state.thetext);
-	axios.post("http://127.0.0.1:5000/hide", formData);
+	axios.post("http://127.0.0.1:5000/hide", formData).then(
+		(response)=> {
+			console.log(response.data);
+		}
+	);
 
+	};
+
+	showData = event => {
+		axios.post("http://127.0.0.1:5000/decrypt").then(
+		(response)=> {
+			this.setState({ thetext: response.data });
+			console.log(response.data);
+		}
+	);
 	};
 
 	onTextChange = event => {
@@ -88,6 +101,7 @@ class App extends Component {
 	axios.post("http://127.0.0.1:5000/upload", formData).then(
 		(response)=> {
 			console.log(response)
+			window.alert("Uploaded");
 			// console.log(response);
 			// var blob = new Blob([this.response['data']], {type: "application/pdf"});
 			// var url = window.URL.createObjectURL(blob);
@@ -159,8 +173,12 @@ class App extends Component {
 				<button onClick={this.downloadFile}>
 				Download!
 				</button>
+				<button onClick={this.showData}>
+				Show data
+				</button>
 			</div>
 		{this.fileData()}
+		<p>{this.state.thetext}</p>
 		</div>
 	);
 	}
