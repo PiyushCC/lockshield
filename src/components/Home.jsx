@@ -27,7 +27,7 @@ function Home() {
           <div class="d-flex justify-content-start">
           {/* <img src={play} alt="Play Button" /> */}
           <div class="contact__data__form"><li>
-            <Link to="/app">Contact</Link>
+            <Link to="/app">Try Lockshield</Link>
           </li></div>
           
           </div>

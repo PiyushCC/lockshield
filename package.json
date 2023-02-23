@@ -70,8 +70,8 @@
   "devDependencies": {
     "concurrently": "^7.6.0",
     "electron": "^23.1.0",
+    "electron-builder": "^23.6.0",
     "electron-is-dev": "^2.0.0",
-    "wait-on": "^7.0.1",
-    "electron-builder": "^23.6.0"
+    "wait-on": "^7.0.1"
   }
 }

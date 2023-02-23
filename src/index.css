@@ -19,6 +19,8 @@ html {
 
 body {
   overflow-x: hidden;
+  /* background-origin: 'https://www.stockvault.net/data/2020/09/24/279149/preview16.jpg'; */
+  background-image: url("./assets/bg_nice.jpg");
 }
 
 body,
@@ -55,7 +57,7 @@ button {
 }
 
 .b2 {
-  margin-right: 87px;
+  margin-right: 2px;
 }
 
 .inp1 {
@@ -69,6 +71,7 @@ button {
   font-size: 16px;
   margin: 2px 2px;
   cursor: pointer;
+  padding-right: 201px;
 }
 
 .inp2 {
@@ -79,9 +82,49 @@ button {
   margin: 2px 2px;
   text-decoration: none;
   font-size: 16px;
+  padding-right: 312px;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: rgb(255, 255, 255);
   opacity: 1; /* Firefox */
+}
+.image{
+  margin-top: 50px;
+  height: 480px;
+  width: 720px;
+  margin-left: 200px;
+  border-radius: 20px;
+  border: 2px solid #643B9F;
+}
+h1{
+  color: #fff;
+  /* margin-right: 2rem; */
+  
+}
+h3{
+  color: #fff;
+}
+
+.heading{
+  margin-left: 8rem;
+  margin-bottom: 2rem;
+}
+.formm{
+  margin-left: 2rem;
+}
+.up{
+  margin-bottom: 1rem;
+}
+.ans{
+  color: #fff;
+  margin-left: 0rem;
+  /* border: 5px solid #643B9F; */
+  font-size: 20px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+a{
+  color: #fff;
+  font-size: 20px;
 }
