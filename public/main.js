@@ -1,5 +1,4 @@
 const electron = require('electron');
-const isDev = require('electron-is-dev');
 // Module to control application life.
 const app = electron.app;
 // Module to create native browser window.
@@ -16,15 +15,18 @@ function createWindow() {
     // Create the browser window.
     mainWindow = new BrowserWindow({width: 800, height: 600, webPreferences: {nodeIntegration: true, enableRemoteModule: true}});
 
-    // and load the index.html of the app.
-    mainWindow.loadURL(
-        isDev
-          ? 'http://localhost:3000'
-          : `file://${path.join(__dirname, '../build/index.html')}`
-      )
+    if (app.isPackaged)
+    {
+        mainWindow.loadURL(`file://${path.join(__dirname, '../build/index.html')}`);
+    }
+    else
+    {
+        mainWindow.loadURL('http://localhost:3000');
+    }
+    
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function () {

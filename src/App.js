@@ -114,7 +114,7 @@ class App extends Component {
           </p> */}
 
           <p>
-            <img class="image" src={this.state.murl}></img >
+            <img class="pic" src={this.state.murl}></img >
           </p>
         </div>
       );

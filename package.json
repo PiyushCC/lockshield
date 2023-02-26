@@ -2,7 +2,7 @@
   "name": "lockshield",
   "version": "0.1.0",
   "private": true,
-  "main": "public/main.js",
+  "main": "./public/main.js",
   "homepage": "./",
   "author": "Group",
   "description": "A client side encryption for security",
@@ -33,7 +33,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "concurrently -k \"cross-env BROWSER=none npm run start\" \"npm:electron\"",
-    "electron-pack": "npm run build && electron-builder -c.extraMetadata.main=build/main.js",
+    "epack": "npm run build && electron-builder -c.extraMetadata.main=build/main.js",
     "electron": "wait-on -d 20000 && electron ."
   },
   "build": {
@@ -57,11 +57,13 @@
   },
   "browserslist": {
     "production": [
+      "last 1 electron version",
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
     "development": [
+      "last 1 electron version",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
@@ -69,7 +71,7 @@
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
-    "electron": "^23.1.0",
+    "electron": "^23.1.1",
     "electron-builder": "^23.6.0",
     "electron-is-dev": "^2.0.0",
     "wait-on": "^7.0.1"

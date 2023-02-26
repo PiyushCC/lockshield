@@ -4701,10 +4701,10 @@
   "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.292.tgz"
   "version" "1.4.292"
 
-"electron@^23.1.0":
-  "integrity" "sha512-LRgACMpVrmjfYWPgCSyJ+TFQ/FPeniOowpO57z0xUcTchfC7EH+5rUncgYN+uMvqePiYDce+ywZeCIFaO8x/Nw=="
-  "resolved" "https://registry.npmjs.org/electron/-/electron-23.1.0.tgz"
-  "version" "23.1.0"
+"electron@^23.1.1":
+  "integrity" "sha512-junV1NzPx5T8Mx9+o8fMWK1Q5WOtG5vggiM09PGYg/6zTcGDL3DjGVHeUa/97gx7ErXL37DrFnxNg6+ePWprDg=="
+  "resolved" "https://registry.npmjs.org/electron/-/electron-23.1.1.tgz"
+  "version" "23.1.1"
   dependencies:
     "@electron/get" "^2.0.0"
     "@types/node" "^16.11.26"
