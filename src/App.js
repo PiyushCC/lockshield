@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { Component, useState } from "react";
 import Button from "react-bootstrap/Button";
 
+// document.body.style.backgroundColor = "#df62fe";
 class App extends Component {
   state = {
     // Initially, no file is selected
@@ -122,7 +123,7 @@ class App extends Component {
       return (
         <div>
           <br />
-          <h4>Choose before Pressing the Upload button</h4>
+          <h4 class="choose">Choose before Pressing the Upload button</h4>
         </div>
       );
     }
@@ -130,7 +131,7 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{ display: "flex" }}>
+      <div class="body2" style={{ display: "flex" }}>
         <div>
           <div class="heading">  <h1>Lockshield</h1> </div>
          

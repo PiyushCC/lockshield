@@ -17,11 +17,18 @@ html {
   overflow-x: hidden;
 }
 
-body {
+body{
   overflow-x: hidden;
   /* background-origin: 'https://www.stockvault.net/data/2020/09/24/279149/preview16.jpg'; */
-  background-image: url("./assets/bg_nice.jpg");
+  /* background-image: url("./assets/bg_nice.jpg"); */
+  background: rgb(0,4,32);
+  background: linear-gradient(90deg, rgba(0,4,32,1) 36%, rgba(139,43,163,1) 100%);
 }
+
+.choose{
+  color: azure;
+}
+
 
 body,
 button {

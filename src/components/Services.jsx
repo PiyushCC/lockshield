@@ -12,12 +12,19 @@ import { servicesAnimations } from "animation";
 function Services() {
   const [element, controls] = useScroll();
 
+  const styles= {
+    color: 'red',
+};
+<h1 style={styles}>Style obje</h1>
+
   const data = [
     {
       type: "Security",
       text: "Very much security",
       image: service1,
+      
     },
+    
     {
       type: "Security",
       text: "Best security",
@@ -50,7 +57,7 @@ function Services() {
                     <span>0{index + 1}</span>  
                     <h2>{type}</h2>
                   </div>
-                  <p className="services__service__description">{text}</p>
+                  <p className="services__service__description" >{text}</p>
                   <img src={play} alt="Readmore" />
               </motion.div>
             )
@@ -87,18 +94,18 @@ min-height: 100vh;
     }
     &__title {
       span {
-        color: var(--primary-color);
+        color: #fff;
         font-weight: bolder;
       }
       h2 {
         font-size: 3rem;
         line-height: 2.5rem;
         margin-bottom: 5rem;
-        color: var(--secondary-color);
+        color: #fff;
       }
     }
     &__description {
-      color: var(--primary-color);
+      color: #fff;
       margin-bottom: 2rem;
     }
   }
