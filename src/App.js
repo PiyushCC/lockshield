@@ -3,6 +3,7 @@ import React, { Component, useState } from "react";
 import Button from "react-bootstrap/Button";
 
 // document.body.style.backgroundColor = "#df62fe";
+
 class App extends Component {
   state = {
     // Initially, no file is selected
@@ -13,6 +14,9 @@ class App extends Component {
 
   async downloadFile() {
     const response = await fetch("http://127.0.0.1:5000/imag");
+    axios.post("http://127.0.0.1:5000/del2", 'temp').then((res) => {
+      console.log(res);
+    });
     const blob = await response.blob();
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
@@ -48,12 +52,17 @@ class App extends Component {
     // Update the formData object
     formData.append("plaintext", this.state.thetext);
     axios.post("http://127.0.0.1:5000/hide", formData).then((response) => {
-      console.log(response.data);
+      console.log(response);
+      
+      axios.post("http://127.0.0.1:5000/del", 'temp');
+      
     });
   };
 
   showData = (event) => {
-    axios.post("http://127.0.0.1:5000/decrypt").then((response) => {
+    const formData = new FormData();
+    formData.append("file", this.state.selectedFile)
+    axios.post("http://127.0.0.1:5000/decrypt", formData).then((response) => {
       this.setState({ thetext: response.data });
       console.log(response.data);
     });
