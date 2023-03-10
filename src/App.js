@@ -53,6 +53,13 @@ class App extends Component {
     formData.append("plaintext", this.state.thetext);
     axios.post("http://127.0.0.1:5000/hide", formData).then((response) => {
       console.log(response);
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'file.pem'); //or any other extension
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
       
       axios.post("http://127.0.0.1:5000/del", 'temp');
       
@@ -160,9 +167,8 @@ class App extends Component {
             <button class="b2" onClick={this.onFileUpload}>
               Upload!
             </button>
-            <button class="b2" onClick={this.onHide}>
-              Hide
-            </button>
+            {/* <a href="#"><button class="b2" onClick={this.onHide}>Hide</button></a> */}
+            <button class="b2" onClick={this.onHide}>Hide</button>
             <button onClick={this.downloadFile}>Download!</button>
             <button onClick={this.showData}>Show data</button>
             {this.state.thetext && <div class='ans'> <p>Your hidden data is: {this.state.thetext}</p> </div> }
