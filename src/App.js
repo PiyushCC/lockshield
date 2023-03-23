@@ -8,6 +8,7 @@ class App extends Component {
   state = {
     // Initially, no file is selected
     selectedFile: null,
+    pemfile:null,
     thetext: null,
     murl: null,
   };
@@ -46,6 +47,11 @@ class App extends Component {
     this.setState({ murl: URL.createObjectURL(event.target.files[0]) });
   };
 
+  onpemChange = (event) => {
+    // Update the state
+    this.setState({ pemfile: event.target.files[0] });
+  };
+
   onHide = (event) => {
     const formData = new FormData();
 
@@ -67,13 +73,22 @@ class App extends Component {
   };
 
   showData = (event) => {
+    console.log(this.state.pemfile);
     const formData = new FormData();
-    formData.append("file", this.state.selectedFile)
+    formData.append("imag", this.state.selectedFile);
+    formData.append("pemfile", this.state.pemfile);
     axios.post("http://127.0.0.1:5000/decrypt", formData).then((response) => {
+      axios.post("http://127.0.0.1:5000/del3", 'temp');
       this.setState({ thetext: response.data });
       console.log(response.data);
     });
   };
+
+  // dummy = (event) => {
+  //   console.log('hi');
+  //   console.log(this.state.selectedFile);
+  //   console.log(this.state.pemfile);
+  // };
 
   onTextChange = (event) => {
     // Update the state
@@ -135,14 +150,15 @@ class App extends Component {
           </p>
         </div>
       );
-    } else {
-      return (
-        <div>
-          <br />
-          <h4 class="choose">Choose before Pressing the Upload button</h4>
-        </div>
-      );
-    }
+    } 
+    // else {
+    //   return (
+    //     <div>
+    //       <br />
+    //       <h4 class="choose">Choose before Pressing the Upload button</h4>
+    //     </div>
+    //   );
+    // }
   };
 
   render() {
@@ -171,14 +187,16 @@ class App extends Component {
             <button class="b2" onClick={this.onHide}>Hide</button>
             <button onClick={this.downloadFile}>Download!</button>
             <button onClick={this.showData}>Show data</button>
+            {/* <button onClick={this.dummy}>tempi data</button> */}
             {this.state.thetext && <div class='ans'> <p>Your hidden data is: {this.state.thetext}</p> </div> }
-             
+            <br />
+            <br />
+            <h3 class="up">For show data only - Upload private key</h3>
+            <input class="inp1" type="file" onChange={this.onpemChange} />
           </div>
         </div>
         <div>
           {this.fileData()}
-        
-          
         </div>
       </div>
     );
