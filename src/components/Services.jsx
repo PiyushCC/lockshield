@@ -20,19 +20,19 @@ function Services() {
   const data = [
     {
       type: "Security",
-      text: "Very much security",
+      text: "RSA Algorithm",
       image: service1,
       
     },
     
     {
-      type: "Security",
-      text: "Best security",
+      type: "Data Hiding",
+      text: "Steganography",
       image: service2,
     },
     {
-      type: "Security",
-      text: "Shivam Ghodke",
+      type: "Application",
+      text: "Web app + Desktop app",
       image: service3,
     },
   ];
